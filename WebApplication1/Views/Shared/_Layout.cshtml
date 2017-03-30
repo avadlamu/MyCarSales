@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 5%;
+            right: 0;
+        }
+        .footer {
+            background-image: url('/images/footer_bg.png');
+            bottom repeat-x;
+            height: 110px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .footerContent {
+            display: table;
+            width: 100%;
+        }
+
+        .leftFooter {
+            float: left;
+            font-family: maven;
+            font-size: 15px;
+            padding-left: 20px;
+        }
+
+        .rightFooter {
+            float: right;
+            text-align: right;
+        }
+        .center {
+            font-family: 'entypo';
+            font-size: 30px;
+            overflow: hidden;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div>
+                    @Html.ActionLink("AUTO CAR SALES", "Index", "Home", new { area = "" }, new { @class = "navbar-brand parent-style-one" })
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                </ul>
+                <div class="navbar-collapse collapse pull-right">
+                    <ul class="nav navbar-nav ">
+                        <li>@Html.ActionLink("Dealers", "Dealers", "Home")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                        <li>@Html.ActionLink("SignUp", "SignUp", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>   
+
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                   <!-- <div class="footerContent">
+                            <div class="">
+                                <div class="leftFooter">
+                                    <h3 class="">Bottom Menu</h3>
+                                </div>
+                                <div class="leftFooter">
+                                    <h3 class="">Autos</h3>
+                                </div>
+                                <div class="center">
+                                    <h3 class="">About Auto Sales</h3>
+                                </div>
+                                <div class="rightFooter">
+                                    <h3 class="">Social Networks</h3>
+                                    <ul class="">
+                                        <li class="">
+                                            <a class="" href="http://www.facebook.com" target="_blank">
+                                                <i class="icon"></i>Facebook
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="" href="http://twitter.com" target="_blank" title="Read our Twitter feed">
+                                                <i class="icon"></i>Twitter
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="footer-area__links__link" href="http://www.youtube.com" target="_blank" title="Visit Youtube Channel">
+                                                <i class="icon"></i>YouTube
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="footer-area__links__link" href="https://plus.google.com" target="_blank">
+                                                <i class="icon"></i>Google +
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                    
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>                
+                </footer>
+            </div>
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+</body>
+</html>

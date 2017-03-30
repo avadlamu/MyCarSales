@@ -1,0 +1,17 @@
+﻿@model WebApplication1.Models.LoginModel
+@{
+    ViewBag.Title = "login";
+}
+
+<h2>Login</h2>
+@Html.ValidationSummary(true)
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <br />
+    <p>
+        <button type="submit">LogIn</button>
+    </p>
+   
+}
+

@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    div.searchforcar {
+        background-color: rgba(0, 0, 0, 0);
+        width: 400px;
+        border: 2px solid black;
+        padding: 25px;
+        margin: 25px;
+    }
+
+    .backgroundimage {
+        background-image: url(~/Images/carparkin.jpg);
+        background-repeat: no-repeat;
+        background-size: 300px 100px;
+    }
+
+    .button {
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .searchBg {
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+    .sell {
+        border: none;
+        padding: 20px;
+        width: 100%;
+        resize: horizontal;
+        overflow: auto;
+    }
+    div.sellmycar {
+        background-color: rgba(0, 0, 0, 0.25);
+        width: 100%;
+        border: 5px solid black;
+        padding: 50px;
+        padding-top: 10px;
+        padding-bottom:50px ;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin:initial;
+    }
+    div.popularmakes {
+        background-color: rgba(8, 8, 8, 1);
+        width: 100%;
+        border: 5px solid black;
+        padding: 50px;
+        padding-top: 10px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin: initial;
+    }
+</style>
+<div class="jumbotron searchBg" style="background-image: url('https://static.pexels.com/photos/24353/pexels-photo.jpg'); background-size: cover; background-position: center;">
+    <section>
+        <div>
+            <div class="searchforcar backgroundimage">
+                <h2 style="color:red;font-size:xx-large">SearchForCar</h2>
+                <select style="background-color:#f5f5f5">
+                    <option value=" Any Make">Any Make</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+                &emsp;
+                <select style="background-color:#f5f5f5">
+                    <option value=" Any Model">Any Model</option>
+                    <option value="Any Model">Any Model</option>
+                </select>
+                <p style="text-indent:5em;"></p>
+                <select style="background-color:#f5f5f5">
+                    <option value=" Any Price">Any Price</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="3000">3000</option>
+                    <option value="4000">4000</option>
+                </select>
+                <input id="Zipcode" class="zipcode" type="text" value="" title="Zipcode" placeholder="Zipcode" pattern="\d*" style="height:28px;width:155px" />
+                &emsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="button" class="button" value="Search" onclick="@("window.location.href='" + @Url.Action("Search", "Home") + "'");" />
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sellmycar">
+            <h2 style="color:red;font-family:Arial">Sell My Car</h2>
+            <br/>
+            <input type="button" class="button" value="Sell" onclick="@("window.location.href='" + @Url.Action("Sell", "Home") + "'");" />
+        </div>
+    </section>
+    <br/>
+    <section>
+        <div class="popularmakes">
+            <h2 style="color:red;font-family:Arial">Popular Makes</h2>
+            <span style="display:block; height:50px"></span>
+            <div style="width:1300px; background-color:white; height:120px; overflow:scroll;overflow-x: scroll; overflow-y: scroll;">
+                <div style="width:1500px">
+                    <a href="http://www.acura.com/"><img style=" float:left; display:inline" src="../Images/Acura.png" width="160" height="90" alt="Acura" /></a>
+                    <a href="http://www.audi.com/en.html"><img style=" float:left; display:inline" src="../Images/Audi.jpg" width="160" height="90" alt="Audi" /></a>
+                    <a href="https://www.mbusa.com/mercedes/index"><img style=" float:left; display:inline" src="../Images/Benz.jpg" width="160" height="90" alt="Benz" /></a>
+                    <a href="http://www.bmw.com/com/en/"><img style=" float:left; display:inline" src="../Images/BMW.jpg" width="160" height="90" alt="BMW" /></a>
+                    <a href="http://www.ferrari.com/choose-your-country"><img style=" float:left; display:inline" src="../Images/Ferrari.jpg" width="160" height="90" alt="Ferrari" /></a>
+                    <a href="http://www.honda.com/"><img style=" float:left; display:inline" src="../Images/Honda.jpg" width="160" height="90" alt="Honda" /></a>
+                    <a href="http://www.jaguar.com/market-selector.html"><img style=" float:left; display:inline" src="../Images/Jaguar.jpg" width="160" height="90" alt="Jaguar" /></a>
+                    <a href="https://www.lamborghini.com/en-en/"><img style=" float:left; display:inline" src="../Images/Lamborghini.png" width="160" height="90" alt="Lamborghini" />  </a>
+                    <a href="http://www.maserati.com/maserati/international/en"><img style=" float:left; display:inline" src="../Images/Maserati.jpg" width="160" height="90" alt="Maserati" /></a>
+                    <a href="https://www.tesla.com/"><img style=" float:left; display:inline" src="../Images/Tesla.png" width="160" height="90" alt="Tesla" /></a>
+                    <a href="http://www.toyota.com/"><img style=" float:left; display:inline" src="../Images/Toyota.jpg" width="160" height="90" alt="Toyota" /></a>
+                    <a href="http://www.vw.com/find-a-dealer/"><img style=" float:left; display:inline" src="../Images/Wolkswagen.jpg" width="160" height="90" alt="Wolkswagen" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
